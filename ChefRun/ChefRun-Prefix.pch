@@ -1,0 +1,35 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+
+
+#define IPAD                        UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
+
+#define SPAWN_TIME                  (IPAD ? 0.3f : 0.243f )
+#define BACKGROUND_SPEED            (IPAD ? 20.0f : 288.0f )
+#define SPRITE_ANIMATION_SPEED      0.05f
+
+#define ITEM_POSITION_1             (IPAD ? 165.0f : 70.0f )
+#define ITEM_POSITION_2             (IPAD ? 250.0f : 110.0f )
+#define ITEM_POSITION_3             (IPAD ? 350.0f : 150.0f )
+
+#define CHARACTER_ANIMATION_TIME    0.05f
+#define CHARACTER_JUMP_DOWN_TIME    0.4f
+#define CHARACTER_JUMP_UP_TIME      0.5f
+#define CHARACTER_JUMP_HEIGHT       (IPAD ? 200.0f : 90.0f )
+#define CHARACTER_START_X           (IPAD ? 170.0f : 70.0f )
+#define CHARACTER_START_Y           (IPAD ? 200.0f : 170.0f )

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Level" representedClassName="Level" syncable="YES">
+        <attribute name="isLocked" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="level" inverseEntity="Player" syncable="YES"/>
+        <relationship name="round" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Round" inverseName="level" inverseEntity="Round" syncable="YES"/>
+    </entity>
+    <entity name="Player" representedClassName="Player" syncable="YES">
+        <attribute name="cash" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="playerNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="level" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Level" inverseName="player" inverseEntity="Level" syncable="YES"/>
+    </entity>
+    <entity name="Round" representedClassName="Round" syncable="YES">
+        <attribute name="hasPlayed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="round" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="level" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Level" inverseName="round" inverseEntity="Level" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Level" positionX="277" positionY="326" width="128" height="103"/>
+        <element name="Player" positionX="259" positionY="90" width="128" height="90"/>
+        <element name="Round" positionX="610" positionY="263" width="128" height="103"/>
+    </elements>
+</model>
